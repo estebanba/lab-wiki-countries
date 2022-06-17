@@ -14,9 +14,14 @@ function App() {
     <div className="App">
       <Navbar />
 
-      <CountriesList countries={countries} setCountries={setCountries} />
-
       <Routes>
+        <Route
+          path="/"
+          element={
+            <CountriesList countries={countries} setCountries={setCountries} />
+          }
+        />
+        <Route path="*" element={<ErrorPage />} />
         <Route
           path="/:countryId"
           element={
